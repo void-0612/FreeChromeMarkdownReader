@@ -1,0 +1,503 @@
+:root {
+  color-scheme: light dark;
+}
+
+body.omr-active {
+  --omr-bg: #f4f1ea;
+  --omr-bg-top: rgba(255, 255, 255, 0.62);
+  --omr-text: #24211d;
+  --omr-heading: #171513;
+  --omr-muted: #786f62;
+  --omr-panel: rgba(255, 253, 248, 0.82);
+  --omr-control: rgba(255, 255, 255, 0.72);
+  --omr-control-soft: rgba(255, 255, 255, 0.54);
+  --omr-border: rgba(93, 84, 70, 0.24);
+  --omr-border-soft: rgba(93, 84, 70, 0.18);
+  --omr-link: #0d6fa8;
+  --omr-link-active: #075b8d;
+  --omr-link-bg: rgba(15, 111, 168, 0.13);
+  --omr-code-bg: rgba(72, 61, 46, 0.12);
+  --omr-pre-bg: #25221d;
+  --omr-pre-text: #f5eadb;
+  --omr-editor-bg: rgba(255, 255, 255, 0.74);
+  --omr-shadow: 0 18px 48px rgba(42, 34, 22, 0.08);
+  margin: 0;
+  background:
+    linear-gradient(180deg, var(--omr-bg-top), rgba(255, 255, 255, 0) 220px),
+    var(--omr-bg);
+  color: var(--omr-text);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body.omr-active.omr-dark {
+  --omr-bg: #111417;
+  --omr-bg-top: rgba(255, 255, 255, 0.04);
+  --omr-text: #e8e2d6;
+  --omr-heading: #fbf4e8;
+  --omr-muted: #a99f91;
+  --omr-panel: rgba(16, 19, 22, 0.78);
+  --omr-control: rgba(255, 255, 255, 0.08);
+  --omr-control-soft: rgba(255, 255, 255, 0.07);
+  --omr-border: rgba(255, 255, 255, 0.16);
+  --omr-border-soft: rgba(255, 255, 255, 0.12);
+  --omr-link: #7ec8ff;
+  --omr-link-active: #a7dcff;
+  --omr-link-bg: rgba(126, 200, 255, 0.16);
+  --omr-code-bg: rgba(255, 255, 255, 0.12);
+  --omr-pre-bg: #07090b;
+  --omr-pre-text: #e9edf0;
+  --omr-editor-bg: rgba(255, 255, 255, 0.06);
+  --omr-shadow: none;
+}
+
+body.omr-active.omr-theme-paper {
+  --omr-bg: #fbf7e8;
+  --omr-bg-top: rgba(255, 252, 239, 0.8);
+  --omr-text: #2f281d;
+  --omr-heading: #1f170d;
+  --omr-muted: #806d4d;
+  --omr-panel: rgba(255, 250, 233, 0.88);
+  --omr-control: rgba(255, 255, 246, 0.74);
+  --omr-control-soft: rgba(255, 250, 233, 0.68);
+  --omr-border: rgba(129, 103, 57, 0.25);
+  --omr-border-soft: rgba(129, 103, 57, 0.18);
+  --omr-link: #8b4d12;
+  --omr-link-active: #6f3908;
+  --omr-link-bg: rgba(174, 110, 34, 0.14);
+  --omr-code-bg: rgba(129, 103, 57, 0.13);
+  --omr-editor-bg: rgba(255, 255, 246, 0.78);
+}
+
+body.omr-active.omr-theme-forest {
+  --omr-bg: #eef4ec;
+  --omr-bg-top: rgba(250, 255, 249, 0.7);
+  --omr-text: #1d2b22;
+  --omr-heading: #102016;
+  --omr-muted: #617464;
+  --omr-panel: rgba(247, 252, 246, 0.84);
+  --omr-control: rgba(255, 255, 255, 0.7);
+  --omr-control-soft: rgba(247, 252, 246, 0.66);
+  --omr-border: rgba(50, 91, 63, 0.24);
+  --omr-border-soft: rgba(50, 91, 63, 0.16);
+  --omr-link: #1d7a4c;
+  --omr-link-active: #0f6338;
+  --omr-link-bg: rgba(29, 122, 76, 0.13);
+  --omr-code-bg: rgba(50, 91, 63, 0.12);
+  --omr-pre-bg: #183125;
+  --omr-pre-text: #e8f4ec;
+  --omr-editor-bg: rgba(255, 255, 255, 0.76);
+}
+
+body.omr-active.omr-theme-ocean {
+  --omr-bg: #eef6f8;
+  --omr-bg-top: rgba(249, 254, 255, 0.76);
+  --omr-text: #182a31;
+  --omr-heading: #0b1d25;
+  --omr-muted: #5b737b;
+  --omr-panel: rgba(247, 253, 255, 0.84);
+  --omr-control: rgba(255, 255, 255, 0.72);
+  --omr-control-soft: rgba(247, 253, 255, 0.68);
+  --omr-border: rgba(38, 94, 111, 0.23);
+  --omr-border-soft: rgba(38, 94, 111, 0.16);
+  --omr-link: #096f8f;
+  --omr-link-active: #055a77;
+  --omr-link-bg: rgba(9, 111, 143, 0.13);
+  --omr-code-bg: rgba(38, 94, 111, 0.11);
+  --omr-pre-bg: #102b36;
+  --omr-pre-text: #e7f6fb;
+  --omr-editor-bg: rgba(255, 255, 255, 0.78);
+}
+
+.omr-shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 292px minmax(0, 1fr);
+}
+
+.omr-main {
+  min-width: 0;
+  padding: 28px 48px 88px;
+}
+
+.omr-document {
+  max-width: 860px;
+  margin: 0 auto;
+  line-height: 1.72;
+  font-size: 17px;
+}
+
+.omr-reader-bar {
+  position: sticky;
+  top: 0;
+  z-index: 4;
+  max-width: 860px;
+  margin: 0 auto 28px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 48px;
+  padding: 8px 0;
+  background: linear-gradient(180deg, var(--omr-bg) 72%, rgba(255, 255, 255, 0));
+}
+
+.omr-reader-status {
+  min-width: 0;
+  display: grid;
+  gap: 2px;
+}
+
+.omr-mode-label {
+  color: var(--omr-heading);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.omr-save-hint {
+  color: var(--omr-muted);
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.omr-reader-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 auto;
+}
+
+.omr-reader-button {
+  min-width: 64px;
+  height: 34px;
+  border: 1px solid var(--omr-border);
+  border-radius: 8px;
+  background: var(--omr-control);
+  color: inherit;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.omr-reader-button:hover {
+  border-color: var(--omr-link);
+  color: var(--omr-link-active);
+}
+
+.omr-reader-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.omr-editor {
+  display: block;
+  width: min(860px, 100%);
+  min-height: calc(100vh - 150px);
+  margin: 0 auto;
+  box-sizing: border-box;
+  resize: vertical;
+  border: 1px solid var(--omr-border);
+  border-radius: 8px;
+  padding: 20px;
+  background: var(--omr-editor-bg);
+  color: inherit;
+  box-shadow: var(--omr-shadow);
+  font: 14px/1.65 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+.omr-editor[hidden] {
+  display: none;
+}
+
+.omr-editor:focus {
+  outline: 2px solid rgba(15, 111, 168, 0.24);
+  outline-offset: 2px;
+}
+
+.omr-document h1,
+.omr-document h2,
+.omr-document h3,
+.omr-document h4,
+.omr-document h5,
+.omr-document h6 {
+  color: var(--omr-heading);
+  line-height: 1.22;
+  margin: 2em 0 0.72em;
+  scroll-margin-top: 28px;
+}
+
+.omr-document h1 {
+  font-size: 2.4rem;
+  margin-top: 0;
+}
+
+.omr-document h2 {
+  font-size: 1.75rem;
+  padding-bottom: 0.28em;
+  border-bottom: 1px solid var(--omr-border-soft);
+}
+
+.omr-document h3 {
+  font-size: 1.32rem;
+}
+
+.omr-document h4,
+.omr-document h5,
+.omr-document h6 {
+  font-size: 1.08rem;
+}
+
+.omr-document p,
+.omr-document ul,
+.omr-document ol,
+.omr-document blockquote,
+.omr-document pre,
+.omr-document table {
+  margin: 0 0 1.15em;
+}
+
+.omr-document a {
+  color: var(--omr-link);
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.16em;
+}
+
+.omr-document code {
+  border-radius: 5px;
+  padding: 0.14em 0.34em;
+  background: var(--omr-code-bg);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.9em;
+}
+
+.omr-document pre {
+  overflow-x: auto;
+  border-radius: 8px;
+  padding: 16px 18px;
+  background: var(--omr-pre-bg);
+  color: var(--omr-pre-text);
+}
+
+.omr-document pre code {
+  padding: 0;
+  background: transparent;
+  color: inherit;
+}
+
+.omr-document blockquote {
+  border-left: 4px solid var(--omr-border);
+  padding: 0.15em 0 0.15em 1em;
+  color: var(--omr-muted);
+}
+
+.omr-document table {
+  width: 100%;
+  border-collapse: collapse;
+  display: block;
+  overflow-x: auto;
+}
+
+.omr-document th,
+.omr-document td {
+  border: 1px solid var(--omr-border);
+  padding: 8px 10px;
+  text-align: left;
+}
+
+.omr-document th {
+  background: var(--omr-code-bg);
+}
+
+.omr-document img {
+  max-width: 100%;
+  border-radius: 6px;
+}
+
+.omr-sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 18px 18px 28px;
+  border-right: 1px solid var(--omr-border-soft);
+  background: var(--omr-panel);
+  backdrop-filter: blur(14px);
+  overflow-y: auto;
+}
+
+.omr-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.omr-title {
+  min-width: 0;
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.omr-button {
+  min-width: 48px;
+  height: 34px;
+  border: 1px solid var(--omr-border);
+  border-radius: 8px;
+  background: var(--omr-control);
+  color: inherit;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 0 9px;
+}
+
+.omr-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+
+.omr-tab {
+  min-width: 0;
+  height: 36px;
+  border: 1px solid var(--omr-border);
+  border-radius: 8px;
+  background: var(--omr-control-soft);
+  color: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.omr-tab-active {
+  background: var(--omr-link-bg);
+  border-color: var(--omr-link);
+  color: var(--omr-link-active);
+}
+
+.omr-panel[hidden] {
+  display: none;
+}
+
+.omr-file-actions {
+  margin-bottom: 12px;
+}
+
+.omr-folder-button {
+  width: 100%;
+  height: 36px;
+  border: 1px solid var(--omr-border);
+  border-radius: 8px;
+  background: var(--omr-control);
+  color: inherit;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.omr-folder-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.56;
+}
+
+.omr-toc-heading {
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--omr-muted);
+  margin-bottom: 10px;
+}
+
+.omr-toc {
+  display: grid;
+  gap: 2px;
+}
+
+.omr-file-list {
+  display: grid;
+  gap: 2px;
+}
+
+.omr-toc a,
+.omr-file-item {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 6px;
+  border: 0;
+  padding: 6px 8px;
+  background: transparent;
+  color: var(--omr-text);
+  text-decoration: none;
+  font-size: 13px;
+  line-height: 1.35;
+  text-align: left;
+  cursor: pointer;
+  overflow-wrap: anywhere;
+}
+
+.omr-toc a:hover,
+.omr-toc a.omr-current,
+.omr-file-item:hover,
+.omr-file-item.omr-current {
+  background: var(--omr-link-bg);
+  color: var(--omr-link-active);
+}
+
+.omr-empty-toc {
+  color: var(--omr-muted);
+  font-size: 13px;
+  line-height: 1.45;
+  white-space: pre-wrap;
+}
+
+@media (max-width: 980px) {
+  .omr-shell {
+    display: block;
+  }
+
+  .omr-main {
+    padding: 88px 22px 72px;
+  }
+
+  .omr-reader-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 14px;
+    margin: 0;
+    max-width: none;
+    border-bottom: 1px solid var(--omr-border-soft);
+  }
+
+  .omr-save-hint {
+    max-width: 48vw;
+  }
+
+  .omr-sidebar {
+    position: fixed;
+    inset: auto 14px 14px;
+    height: auto;
+    max-height: 46vh;
+    border: 1px solid var(--omr-border-soft);
+    border-radius: 8px;
+    box-shadow: 0 16px 44px rgba(22, 18, 12, 0.22);
+    transform: translateY(calc(100% - 55px));
+    transition: transform 160ms ease;
+    z-index: 10;
+  }
+
+  .omr-sidebar:hover,
+  .omr-sidebar:focus-within {
+    transform: translateY(0);
+  }
+}

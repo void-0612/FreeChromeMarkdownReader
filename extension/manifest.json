@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Open Markdown Reader",
+  "description": "Render Markdown files in the browser with a free table of contents.",
+  "version": "0.2.1",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "<all_urls>",
+    "file:///*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>",
+        "file:///*"
+      ],
+      "js": [
+        "reader.js"
+      ],
+      "css": [
+        "reader.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "Open Markdown Reader"
+  }
+}
