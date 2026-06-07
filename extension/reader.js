@@ -1,11 +1,14 @@
 (() => {
   const markdownExtensions = /\.(md|markdown|mdown|mkd)(?:$|[?#])/i;
   const themes = [
-    { id: "light", label: "日间" },
-    { id: "dark", label: "夜间" },
-    { id: "paper", label: "纸张" },
-    { id: "forest", label: "森林" },
-    { id: "ocean", label: "海蓝" }
+    { id: "light", label: "☀️ 日间" },
+    { id: "dark", label: "🌙 夜间" },
+    { id: "paper", label: "📄 纸张" },
+    { id: "forest", label: "🌲 森林" },
+    { id: "ocean", label: "🌊 海蓝" },
+    { id: "modern", label: "✨ 极简" },
+    { id: "glass", label: "🪟 玻璃" },
+    { id: "warm", label: "📖 温暖" }
   ];
   const fileNameFromLocation = () => decodeURIComponent(location.pathname.split("/").pop() || "Markdown");
   const folderFromLocation = () => {
@@ -509,7 +512,7 @@
     <aside class="omr-sidebar" aria-label="Markdown navigation">
       <div class="omr-toolbar">
         <div class="omr-title"></div>
-        <button class="omr-button" type="button" title="切换主题" aria-label="切换主题">日间</button>
+        <button class="omr-button" type="button" title="切换主题" aria-label="切换主题">☀️ 日间</button>
       </div>
       <div class="omr-tabs" role="tablist" aria-label="Navigation mode">
         <button class="omr-tab omr-tab-active" type="button" data-panel="headings">标题目录</button>

@@ -2,6 +2,7 @@
   color-scheme: light dark;
 }
 
+/* ── Base + smooth theme transitions ── */
 body.omr-active {
   --omr-bg: #f4f1ea;
   --omr-bg-top: rgba(255, 255, 255, 0.62);
@@ -27,8 +28,10 @@ body.omr-active {
     var(--omr-bg);
   color: var(--omr-text);
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
+/* ── Existing theme: Dark ── */
 body.omr-active.omr-dark {
   --omr-bg: #111417;
   --omr-bg-top: rgba(255, 255, 255, 0.04);
@@ -50,6 +53,7 @@ body.omr-active.omr-dark {
   --omr-shadow: none;
 }
 
+/* ── Existing theme: Paper ── */
 body.omr-active.omr-theme-paper {
   --omr-bg: #fbf7e8;
   --omr-bg-top: rgba(255, 252, 239, 0.8);
@@ -68,6 +72,7 @@ body.omr-active.omr-theme-paper {
   --omr-editor-bg: rgba(255, 255, 246, 0.78);
 }
 
+/* ── Existing theme: Forest ── */
 body.omr-active.omr-theme-forest {
   --omr-bg: #eef4ec;
   --omr-bg-top: rgba(250, 255, 249, 0.7);
@@ -88,6 +93,7 @@ body.omr-active.omr-theme-forest {
   --omr-editor-bg: rgba(255, 255, 255, 0.76);
 }
 
+/* ── Existing theme: Ocean ── */
 body.omr-active.omr-theme-ocean {
   --omr-bg: #eef6f8;
   --omr-bg-top: rgba(249, 254, 255, 0.76);
@@ -108,6 +114,87 @@ body.omr-active.omr-theme-ocean {
   --omr-editor-bg: rgba(255, 255, 255, 0.78);
 }
 
+/* ═══════════════════════════════════════════════
+   NEW THEME: 极简 (Modern Minimal)
+   Notion / Linear inspired — clean, airy
+   ═══════════════════════════════════════════════ */
+body.omr-active.omr-theme-modern {
+  --omr-bg: #ffffff;
+  --omr-bg-top: #fafafa;
+  --omr-text: #1a1a1a;
+  --omr-heading: #0a0a0a;
+  --omr-muted: #777777;
+  --omr-panel: #ffffff;
+  --omr-control: #f5f5f5;
+  --omr-control-soft: #f0f0f0;
+  --omr-border: rgba(0, 0, 0, 0.12);
+  --omr-border-soft: rgba(0, 0, 0, 0.06);
+  --omr-link: #2563eb;
+  --omr-link-active: #1d4ed8;
+  --omr-link-bg: rgba(37, 99, 235, 0.08);
+  --omr-code-bg: rgba(0, 0, 0, 0.06);
+  --omr-pre-bg: #1a1a2e;
+  --omr-pre-text: #e4e4ec;
+  --omr-editor-bg: #fafafa;
+  --omr-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+/* ═══════════════════════════════════════════════
+   NEW THEME: 玻璃 (Glassmorphism)
+   Frosted glass, gradients, layered depth
+   ═══════════════════════════════════════════════ */
+body.omr-active.omr-theme-glass {
+  --omr-bg: #eef2ff;
+  --omr-bg-top: rgba(255, 255, 255, 0.9);
+  --omr-text: #1e1b3a;
+  --omr-heading: #0f0b2a;
+  --omr-muted: #7c7a9e;
+  --omr-panel: rgba(255, 255, 255, 0.55);
+  --omr-control: rgba(255, 255, 255, 0.62);
+  --omr-control-soft: rgba(255, 255, 255, 0.4);
+  --omr-border: rgba(120, 110, 190, 0.18);
+  --omr-border-soft: rgba(120, 110, 190, 0.10);
+  --omr-link: #6c5ce7;
+  --omr-link-active: #5541d9;
+  --omr-link-bg: rgba(108, 92, 231, 0.12);
+  --omr-code-bg: rgba(108, 92, 231, 0.08);
+  --omr-pre-bg: #1a163a;
+  --omr-pre-text: #e8e4f8;
+  --omr-editor-bg: rgba(255, 255, 255, 0.65);
+  --omr-shadow: 0 8px 32px rgba(68, 58, 150, 0.12);
+  background:
+    linear-gradient(135deg, #eef2ff 0%, #fce7f3 50%, #fef3c7 100%);
+}
+
+/* ═══════════════════════════════════════════════
+   NEW THEME: 温暖 (Warm Reader)
+   Book-like: serif font, warm paper tones
+   ═══════════════════════════════════════════════ */
+body.omr-active.omr-theme-warm {
+  --omr-bg: #faf6f0;
+  --omr-bg-top: rgba(255, 252, 245, 0.85);
+  --omr-text: #3a3028;
+  --omr-heading: #231e18;
+  --omr-muted: #9a8878;
+  --omr-panel: rgba(255, 249, 240, 0.88);
+  --omr-control: rgba(255, 247, 235, 0.78);
+  --omr-control-soft: rgba(255, 244, 228, 0.6);
+  --omr-border: rgba(160, 120, 80, 0.20);
+  --omr-border-soft: rgba(160, 120, 80, 0.12);
+  --omr-link: #b8692a;
+  --omr-link-active: #9a551f;
+  --omr-link-bg: rgba(184, 105, 42, 0.10);
+  --omr-code-bg: rgba(160, 120, 80, 0.10);
+  --omr-pre-bg: #2a2218;
+  --omr-pre-text: #f0e8da;
+  --omr-editor-bg: rgba(255, 249, 240, 0.82);
+  --omr-shadow: 0 8px 40px rgba(100, 70, 40, 0.10);
+  font-family: Georgia, "Noto Serif SC", "Songti SC", serif;
+}
+
+/* ═══════════════════════════════════════════════
+   LAYOUT
+   ═══════════════════════════════════════════════ */
 .omr-shell {
   min-height: 100vh;
   display: grid;
@@ -122,10 +209,36 @@ body.omr-active.omr-theme-ocean {
 .omr-document {
   max-width: 860px;
   margin: 0 auto;
-  line-height: 1.72;
-  font-size: 17px;
+  line-height: 1.75;
+  font-size: 18px;
 }
 
+/* ── Scrollbar ── */
+.omr-sidebar::-webkit-scrollbar,
+.omr-document pre::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.omr-sidebar::-webkit-scrollbar-track,
+.omr-document pre::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.omr-sidebar::-webkit-scrollbar-thumb,
+.omr-document pre::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+}
+
+.omr-dark .omr-sidebar::-webkit-scrollbar-thumb,
+.omr-dark .omr-document pre::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* ═══════════════════════════════════════════════
+   READER BAR
+   ═══════════════════════════════════════════════ */
 .omr-reader-bar {
   position: sticky;
   top: 0;
@@ -138,8 +251,12 @@ body.omr-active.omr-theme-ocean {
   justify-content: space-between;
   gap: 16px;
   min-height: 48px;
-  padding: 8px 0;
-  background: linear-gradient(180deg, var(--omr-bg) 72%, rgba(255, 255, 255, 0));
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: var(--omr-panel);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: var(--omr-shadow);
 }
 
 .omr-reader-status {
@@ -179,18 +296,26 @@ body.omr-active.omr-theme-ocean {
   cursor: pointer;
   font-size: 13px;
   font-weight: 800;
+  transition: all 0.15s ease;
 }
 
 .omr-reader-button:hover {
   border-color: var(--omr-link);
   color: var(--omr-link-active);
+  transform: translateY(-1px);
+}
+
+.omr-reader-button:active {
+  transform: translateY(0) scale(0.97);
 }
 
 .omr-reader-button:disabled {
   cursor: not-allowed;
   opacity: 0.55;
+  transform: none;
 }
 
+/* ── Editor ── */
 .omr-editor {
   display: block;
   width: min(860px, 100%);
@@ -199,12 +324,13 @@ body.omr-active.omr-theme-ocean {
   box-sizing: border-box;
   resize: vertical;
   border: 1px solid var(--omr-border);
-  border-radius: 8px;
-  padding: 20px;
+  border-radius: 10px;
+  padding: 24px;
   background: var(--omr-editor-bg);
   color: inherit;
   box-shadow: var(--omr-shadow);
-  font: 14px/1.65 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font: 14px/1.7 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
 .omr-editor[hidden] {
@@ -212,10 +338,14 @@ body.omr-active.omr-theme-ocean {
 }
 
 .omr-editor:focus {
-  outline: 2px solid rgba(15, 111, 168, 0.24);
-  outline-offset: 2px;
+  outline: none;
+  border-color: var(--omr-link);
+  box-shadow: 0 0 0 3px var(--omr-link-bg), var(--omr-shadow);
 }
 
+/* ═══════════════════════════════════════════════
+   DOCUMENT TYPOGRAPHY
+   ═══════════════════════════════════════════════ */
 .omr-document h1,
 .omr-document h2,
 .omr-document h3,
@@ -229,24 +359,30 @@ body.omr-active.omr-theme-ocean {
 }
 
 .omr-document h1 {
-  font-size: 2.4rem;
+  font-size: 2.5rem;
+  font-weight: 750;
   margin-top: 0;
+  letter-spacing: -0.02em;
 }
 
 .omr-document h2 {
   font-size: 1.75rem;
+  font-weight: 700;
   padding-bottom: 0.28em;
   border-bottom: 1px solid var(--omr-border-soft);
+  letter-spacing: -0.01em;
 }
 
 .omr-document h3 {
-  font-size: 1.32rem;
+  font-size: 1.35rem;
+  font-weight: 650;
 }
 
 .omr-document h4,
 .omr-document h5,
 .omr-document h6 {
   font-size: 1.08rem;
+  font-weight: 600;
 }
 
 .omr-document p,
@@ -255,41 +391,60 @@ body.omr-active.omr-theme-ocean {
 .omr-document blockquote,
 .omr-document pre,
 .omr-document table {
-  margin: 0 0 1.15em;
+  margin: 0 0 1.2em;
 }
 
 .omr-document a {
   color: var(--omr-link);
   text-decoration-thickness: 0.08em;
   text-underline-offset: 0.16em;
+  transition: color 0.15s ease;
+}
+
+.omr-document a:hover {
+  color: var(--omr-link-active);
+  text-decoration-thickness: 0.12em;
 }
 
 .omr-document code {
   border-radius: 5px;
-  padding: 0.14em 0.34em;
+  padding: 0.14em 0.38em;
   background: var(--omr-code-bg);
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 0.9em;
+  font-size: 0.88em;
 }
 
 .omr-document pre {
   overflow-x: auto;
-  border-radius: 8px;
-  padding: 16px 18px;
+  border-radius: 10px;
+  padding: 18px 20px;
   background: var(--omr-pre-bg);
   color: var(--omr-pre-text);
+  position: relative;
+}
+
+.omr-document pre::before {
+  content: "● ● ●";
+  display: block;
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: rgba(255, 255, 255, 0.15);
+  margin-bottom: 10px;
+  opacity: 0.6;
 }
 
 .omr-document pre code {
   padding: 0;
   background: transparent;
   color: inherit;
+  font-size: 0.9em;
 }
 
 .omr-document blockquote {
   border-left: 4px solid var(--omr-border);
-  padding: 0.15em 0 0.15em 1em;
+  padding: 0.2em 0 0.2em 1.2em;
   color: var(--omr-muted);
+  font-style: italic;
 }
 
 .omr-document table {
@@ -297,34 +452,49 @@ body.omr-active.omr-theme-ocean {
   border-collapse: collapse;
   display: block;
   overflow-x: auto;
+  font-size: 0.95em;
 }
 
 .omr-document th,
 .omr-document td {
   border: 1px solid var(--omr-border);
-  padding: 8px 10px;
+  padding: 10px 14px;
   text-align: left;
 }
 
 .omr-document th {
   background: var(--omr-code-bg);
+  font-weight: 700;
+}
+
+.omr-document tr:nth-child(even) td {
+  background: var(--omr-control-soft);
 }
 
 .omr-document img {
   max-width: 100%;
-  border-radius: 6px;
+  border-radius: 8px;
+  box-shadow: var(--omr-shadow);
 }
 
+/* ═══════════════════════════════════════════════
+   SIDEBAR
+   ═══════════════════════════════════════════════ */
 .omr-sidebar {
   position: sticky;
-  top: 0;
-  height: 100vh;
+  top: 12px;
+  height: calc(100vh - 24px);
   box-sizing: border-box;
-  padding: 18px 18px 28px;
-  border-right: 1px solid var(--omr-border-soft);
+  padding: 18px 14px 28px;
+  margin: 12px 0 12px 12px;
+  border: 1px solid var(--omr-border-soft);
+  border-radius: 14px;
   background: var(--omr-panel);
-  backdrop-filter: blur(14px);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: var(--omr-shadow);
   overflow-y: auto;
+  transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .omr-toolbar {
@@ -332,7 +502,8 @@ body.omr-active.omr-theme-ocean {
   align-items: center;
   justify-content: space-between;
   gap: 10px;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
+  padding: 0 4px;
 }
 
 .omr-title {
@@ -352,34 +523,52 @@ body.omr-active.omr-theme-ocean {
   background: var(--omr-control);
   color: inherit;
   cursor: pointer;
-  font-size: 12px;
-  font-weight: 800;
-  padding: 0 9px;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 0 10px;
+  transition: all 0.15s ease;
+}
+
+.omr-button:hover {
+  border-color: var(--omr-link);
+  color: var(--omr-link-active);
+}
+
+.omr-button:active {
+  transform: scale(0.96);
 }
 
 .omr-tabs {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 6px;
-  margin-bottom: 18px;
+  gap: 4px;
+  margin-bottom: 16px;
+  padding: 3px;
+  background: var(--omr-control-soft);
+  border-radius: 10px;
 }
 
 .omr-tab {
   min-width: 0;
-  height: 36px;
-  border: 1px solid var(--omr-border);
+  height: 34px;
+  border: 0;
   border-radius: 8px;
-  background: var(--omr-control-soft);
-  color: inherit;
+  background: transparent;
+  color: var(--omr-muted);
   font-size: 13px;
   font-weight: 700;
   cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.omr-tab:hover {
+  color: var(--omr-text);
 }
 
 .omr-tab-active {
-  background: var(--omr-link-bg);
-  border-color: var(--omr-link);
-  color: var(--omr-link-active);
+  background: var(--omr-panel);
+  color: var(--omr-heading);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
 }
 
 .omr-panel[hidden] {
@@ -400,30 +589,38 @@ body.omr-active.omr-theme-ocean {
   cursor: pointer;
   font-size: 13px;
   font-weight: 700;
+  transition: all 0.15s ease;
+}
+
+.omr-folder-button:hover {
+  border-color: var(--omr-link);
+  color: var(--omr-link-active);
 }
 
 .omr-folder-button:disabled {
   cursor: not-allowed;
   opacity: 0.56;
+  transform: none;
 }
 
 .omr-toc-heading {
-  font-size: 12px;
-  font-weight: 800;
+  font-size: 11px;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   color: var(--omr-muted);
-  margin-bottom: 10px;
+  margin-bottom: 8px;
+  padding: 0 4px;
 }
 
 .omr-toc {
   display: grid;
-  gap: 2px;
+  gap: 1px;
 }
 
 .omr-file-list {
   display: grid;
-  gap: 2px;
+  gap: 1px;
 }
 
 .omr-toc a,
@@ -433,23 +630,41 @@ body.omr-active.omr-theme-ocean {
   box-sizing: border-box;
   border-radius: 6px;
   border: 0;
-  padding: 6px 8px;
+  padding: 7px 10px;
   background: transparent;
   color: var(--omr-text);
   text-decoration: none;
   font-size: 13px;
-  line-height: 1.35;
+  line-height: 1.4;
   text-align: left;
   cursor: pointer;
   overflow-wrap: anywhere;
+  transition: all 0.15s ease;
+  position: relative;
 }
 
 .omr-toc a:hover,
+.omr-file-item:hover {
+  background: var(--omr-link-bg);
+  color: var(--omr-link-active);
+}
+
 .omr-toc a.omr-current,
-.omr-file-item:hover,
 .omr-file-item.omr-current {
   background: var(--omr-link-bg);
   color: var(--omr-link-active);
+  font-weight: 600;
+}
+
+.omr-toc a.omr-current::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  bottom: 4px;
+  width: 3px;
+  border-radius: 2px;
+  background: var(--omr-link);
 }
 
 .omr-empty-toc {
@@ -457,15 +672,23 @@ body.omr-active.omr-theme-ocean {
   font-size: 13px;
   line-height: 1.45;
   white-space: pre-wrap;
+  padding: 0 4px;
 }
 
+/* ═══════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════ */
 @media (max-width: 980px) {
   .omr-shell {
     display: block;
   }
 
   .omr-main {
-    padding: 88px 22px 72px;
+    padding: 88px 18px 72px;
+  }
+
+  .omr-document {
+    font-size: 17px;
   }
 
   .omr-reader-bar {
@@ -476,7 +699,10 @@ body.omr-active.omr-theme-ocean {
     padding: 10px 14px;
     margin: 0;
     max-width: none;
+    border-radius: 0;
     border-bottom: 1px solid var(--omr-border-soft);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
   }
 
   .omr-save-hint {
@@ -485,14 +711,15 @@ body.omr-active.omr-theme-ocean {
 
   .omr-sidebar {
     position: fixed;
-    inset: auto 14px 14px;
+    inset: auto 12px 12px;
     height: auto;
     max-height: 46vh;
+    margin: 0;
     border: 1px solid var(--omr-border-soft);
-    border-radius: 8px;
-    box-shadow: 0 16px 44px rgba(22, 18, 12, 0.22);
-    transform: translateY(calc(100% - 55px));
-    transition: transform 160ms ease;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(22, 18, 12, 0.18);
+    transform: translateY(calc(100% - 54px));
+    transition: transform 180ms ease;
     z-index: 10;
   }
 
