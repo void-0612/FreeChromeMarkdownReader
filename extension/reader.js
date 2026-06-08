@@ -49,17 +49,10 @@
     document.body.classList.remove("omr-dark", ...themes.map((item) => `omr-theme-${item.id}`));
     document.body.classList.add(`omr-theme-${theme.id}`);
     document.body.classList.toggle("omr-dark", theme.id === "dark");
-    const button = shell?.querySelector(".omr-button");
-    if (button) {
-      button.textContent = theme.label;
-      button.title = `切换主题：当前 ${theme.label}`;
-      button.setAttribute("aria-label", `切换主题：当前 ${theme.label}`);
+    const select = shell?.querySelector(".omr-theme-select");
+    if (select) {
+      select.value = theme.id;
     }
-  };
-
-  const nextTheme = () => {
-    const current = themes.findIndex((theme) => document.body.classList.contains(`omr-theme-${theme.id}`));
-    return themes[(current + 1) % themes.length].id;
   };
 
   const escapeHtml = (value) =>
@@ -512,7 +505,7 @@
     <aside class="omr-sidebar" aria-label="Markdown navigation">
       <div class="omr-toolbar">
         <div class="omr-title"></div>
-        <button class="omr-button" type="button" title="切换主题" aria-label="切换主题">☀️ 日间</button>
+        <select class="omr-theme-select" title="选择主题" aria-label="选择主题"></select>
       </div>
       <div class="omr-tabs" role="tablist" aria-label="Navigation mode">
         <button class="omr-tab omr-tab-active" type="button" data-panel="headings">标题目录</button>
@@ -556,10 +549,16 @@
     applyTheme(theme, shell);
   });
 
-  shell.querySelector(".omr-button").addEventListener("click", () => {
-    const theme = nextTheme();
-    applyTheme(theme, shell);
-    chrome.storage.sync.set({ theme });
+  const themeSelect = shell.querySelector(".omr-theme-select");
+  themes.forEach((t) => {
+    const opt = document.createElement("option");
+    opt.value = t.id;
+    opt.textContent = t.label;
+    themeSelect.append(opt);
+  });
+  themeSelect.addEventListener("change", () => {
+    applyTheme(themeSelect.value, shell);
+    chrome.storage.sync.set({ theme: themeSelect.value });
   });
 
   shell.querySelectorAll(".omr-tab").forEach((button) => {

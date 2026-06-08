@@ -53,23 +53,39 @@ body.omr-active.omr-dark {
   --omr-shadow: none;
 }
 
-/* ── Existing theme: Paper ── */
+/* ── Existing theme: Paper (improved — real paper feel) ── */
 body.omr-active.omr-theme-paper {
-  --omr-bg: #fbf7e8;
-  --omr-bg-top: rgba(255, 252, 239, 0.8);
-  --omr-text: #2f281d;
-  --omr-heading: #1f170d;
-  --omr-muted: #806d4d;
-  --omr-panel: rgba(255, 250, 233, 0.88);
-  --omr-control: rgba(255, 255, 246, 0.74);
-  --omr-control-soft: rgba(255, 250, 233, 0.68);
-  --omr-border: rgba(129, 103, 57, 0.25);
-  --omr-border-soft: rgba(129, 103, 57, 0.18);
+  --omr-bg: #f2ece1;
+  --omr-bg-top: rgba(245, 238, 224, 0.9);
+  --omr-text: #2c2416;
+  --omr-heading: #1a150e;
+  --omr-muted: #9a8a78;
+  --omr-panel: rgba(248, 242, 231, 0.92);
+  --omr-control: rgba(245, 238, 224, 0.8);
+  --omr-control-soft: rgba(240, 231, 215, 0.65);
+  --omr-border: rgba(130, 100, 65, 0.18);
+  --omr-border-soft: rgba(130, 100, 65, 0.10);
   --omr-link: #8b4d12;
   --omr-link-active: #6f3908;
-  --omr-link-bg: rgba(174, 110, 34, 0.14);
-  --omr-code-bg: rgba(129, 103, 57, 0.13);
-  --omr-editor-bg: rgba(255, 255, 246, 0.78);
+  --omr-link-bg: rgba(174, 110, 34, 0.12);
+  --omr-code-bg: rgba(130, 100, 65, 0.10);
+  --omr-pre-bg: #2a2218;
+  --omr-pre-text: #f0e8da;
+  --omr-editor-bg: rgba(248, 242, 231, 0.88);
+  --omr-shadow: 0 6px 28px rgba(80, 55, 25, 0.07);
+  background:
+    linear-gradient(180deg, var(--omr-bg-top), rgba(255, 255, 255, 0) 280px),
+    var(--omr-bg);
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 20px,
+      rgba(130, 100, 65, 0.035) 20px,
+      rgba(130, 100, 65, 0.035) 21px
+    ),
+    linear-gradient(180deg, var(--omr-bg-top), rgba(255, 255, 255, 0) 280px),
+    var(--omr-bg);
 }
 
 /* ── Existing theme: Forest ── */
@@ -515,27 +531,35 @@ body.omr-active.omr-theme-warm {
   text-overflow: ellipsis;
 }
 
-.omr-button {
-  min-width: 48px;
+.omr-theme-select {
+  max-width: 140px;
   height: 34px;
   border: 1px solid var(--omr-border);
   border-radius: 8px;
   background: var(--omr-control);
-  color: inherit;
+  color: var(--omr-text);
   cursor: pointer;
   font-size: 13px;
   font-weight: 700;
-  padding: 0 10px;
+  padding: 0 26px 0 10px;
   transition: all 0.15s ease;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%23777777' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 10px 6px;
 }
 
-.omr-button:hover {
+.omr-theme-select:hover {
   border-color: var(--omr-link);
-  color: var(--omr-link-active);
 }
 
-.omr-button:active {
-  transform: scale(0.96);
+.omr-theme-select:focus {
+  outline: none;
+  border-color: var(--omr-link);
+  box-shadow: 0 0 0 2px var(--omr-link-bg);
 }
 
 .omr-tabs {
